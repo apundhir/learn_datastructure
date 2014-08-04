@@ -57,8 +57,9 @@ public class LinkedList<Item extends Comparable<Item>> {
 	public Item getNth(int index) throws MyException{
 		Node curr = head;
 		int count = 0;
-		if(index > size()){
-			throw new MyException("Index is more than list size");
+		int size = size();
+		if(index > size || index < size ){
+			throw new MyException("Index is outside list");
 		}
 		while (curr != null) {
 			if (count == index)
@@ -74,7 +75,17 @@ public class LinkedList<Item extends Comparable<Item>> {
 			head = head.next;
 	}
 	
-	public void deleteNth(int index){
+	public void deleteNth(int index) throws MyException{
+		Node curr = head;
+		int count = 0;
+		int size = size();
+		if(index > size || index < size ){
+			throw new MyException("Index is outside list");
+		} else if(index == 0){
+			head = head.next;
+		} else{
+			
+		}
 		
 	}
 
